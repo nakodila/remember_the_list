@@ -1,7 +1,12 @@
 import React from 'react';
+import HomepageContainer from './homepage/homepage_container';
+
 const App = () => (
   <div>
-    <h1>Remember The Milk</h1>
+    <header>
+      <h1>Remember The Milk</h1>
+      <HomepageContainer />
+    </header>
   </div>
 );
 
