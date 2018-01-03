@@ -49,31 +49,36 @@ class SessionForm extends React.Component {
           </li>
         ))}
       </ul>
-    );
-  }
+    )
+  };
 
-  const extraSignupFields = () =>
-  { if (this.props.formType == 'signup') {
-    return { <section className="extra-signup-fields">
-      <label>First Name:
-      <input type="firstName" value={this.state.password}
-        onChange={this.update('firstName')}
-        className="login-input"
-        />
-    </label>
-    <label> Last Name:
-      <input type="lastName" value={this.state.password}
-        onChange={this.update('lastName')}
-        className="login-input"
-        />
-    </label>
-    <label>Email:
-      <input type="email" value={this.state.password}
-        onChange={this.update('email')}
-        className="login-input"
-        />
-    </label>
-  </section> }}};
+  extraSignupFields() {
+    if (this.props.formType == 'signup') {
+      return (
+        <section className="extra-signup-fields">
+          <label>First Name:
+          <input type="firstName"
+            value={this.state.firstName}
+            onChange={this.update('firstName')}
+            className="login-input"
+            />
+        </label>
+        <br/>
+        <label> Last Name:
+          <input type="lastName" value={this.state.lastName}
+            onChange={this.update('lastName')}
+            className="login-input"
+            />
+        </label>
+        <br/>
+        <label>Email:
+          <input type="email" value={this.state.email}
+            onChange={this.update('email')}
+            className="login-input"
+            />
+        </label>
+        <br/>
+      </section> )}};
 
   render() {
     return (
@@ -83,7 +88,7 @@ class SessionForm extends React.Component {
           Please {this.props.formType} or {this.navLink()}
           <div className="login-form">
             <br/>
-            { extraSignupFields() }
+            { this.extraSignupFields() }
             <label>Username:
               <input type="text"
                 value={this.state.username}
