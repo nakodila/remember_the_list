@@ -10,7 +10,6 @@ class Api::UsersController < ApplicationController
     end
   end
 
-  def
   private
 
   def user_params
