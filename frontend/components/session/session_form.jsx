@@ -52,6 +52,29 @@ class SessionForm extends React.Component {
     );
   }
 
+  const extraSignupFields = () =>
+  { if (this.props.formType == 'signup') {
+    return { <section className="extra-signup-fields">
+      <label>First Name:
+      <input type="firstName" value={this.state.password}
+        onChange={this.update('firstName')}
+        className="login-input"
+        />
+    </label>
+    <label> Last Name:
+      <input type="lastName" value={this.state.password}
+        onChange={this.update('lastName')}
+        className="login-input"
+        />
+    </label>
+    <label>Email:
+      <input type="email" value={this.state.password}
+        onChange={this.update('email')}
+        className="login-input"
+        />
+    </label>
+  </section> }}};
+
   render() {
     return (
       <div className="login-form-container">
@@ -60,6 +83,7 @@ class SessionForm extends React.Component {
           Please {this.props.formType} or {this.navLink()}
           <div className="login-form">
             <br/>
+            { extraSignupFields() }
             <label>Username:
               <input type="text"
                 value={this.state.username}
