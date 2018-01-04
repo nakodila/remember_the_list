@@ -11,11 +11,11 @@ import {
 
 
 const App = () => (
-  <div>
-    <header>
+  <div className="container">
+    <header className="appHeader">
       <h1>Remember The List</h1>
-      <HomepageContainer />
     </header>
+    <Route path="/" component={HomepageContainer} />
     <Route path="/login" component={SessionFormContainer} />
     <Route path="/signup" component={SessionFormContainer} />
   </div>
