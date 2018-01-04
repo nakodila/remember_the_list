@@ -7,8 +7,8 @@ class SessionForm extends React.Component {
     this.state = {
       username: '',
       password: '',
-      firstName: '',
-      lastName: '',
+      first_name: '',
+      last_name: '',
       email: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -58,16 +58,16 @@ class SessionForm extends React.Component {
 
         <section className="extra-signup-fields login-form">
           <h2 className="login-greet">Sign up for free.</h2>
-          <input type="firstName"
-            value={this.state.firstName}
-            onChange={this.update('firstName')}
+          <input type="first_name"
+            value={this.state.first_name}
+            onChange={this.update('first_name')}
             className="login-input"
             placeholder="First Name"
             />
         <br/>
-          <input type="lastName"
-            value={this.state.lastName}
-            onChange={this.update('lastName')}
+          <input type="last_name"
+            value={this.state.last_name}
+            onChange={this.update('last_name')}
             className="login-input"
             placeholder="Last Name"
             />
