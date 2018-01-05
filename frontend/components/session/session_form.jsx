@@ -34,13 +34,16 @@ class SessionForm extends React.Component {
 
   navLink() {
     if (this.props.formType === 'login') {
-      return <Link to="/signup">Sign up for free</Link>;
+      return <Link to="/signup" className="login-signup-link">Sign up for free</Link>;
     } else {
-      return <Link to="/login">Log in</Link>;
+      return <Link to="/login" className="login-signup-link">Log in</Link>;
     }
   }
 
   renderErrors() {
+    if (this.props.errors === null) {
+      return null;
+    };
     return(
       <ul>
         {this.props.errors.map((error, i) => (
@@ -52,94 +55,70 @@ class SessionForm extends React.Component {
     )
   };
 
+  inputField(input_type, placeholder) {
+    return <input type={input_type}
+            value={this.state.input_type}
+            onChange={this.update(input_type)}
+            className="login-input input"
+            placeholder={placeholder}
+          />
+  }
   signupForm() {
     if (this.props.formType == 'signup') {
       return (
-
         <section className="extra-signup-fields login-form">
           <h2 className="login-greet">Sign up for free.</h2>
-          <input type="first_name"
-            value={this.state.first_name}
-            onChange={this.update('first_name')}
-            className="login-input"
-            placeholder="First Name"
-            />
-        <br/>
-          <input type="last_name"
-            value={this.state.last_name}
-            onChange={this.update('last_name')}
-            className="login-input"
-            placeholder="Last Name"
-            />
-        <br/>
-          <input type="email"
-            value={this.state.email}
-            onChange={this.update('email')}
-            className="login-input"
-            placeholder="Email"
-            />
-        <br/>
-          <input type="text"
-            value={this.state.username}
-            onChange={this.update('username')}
-            className="login-input"
-            placeholder="Username"
-          />
-        <br/>
-          <input type="password"
-            value={this.state.password}
-            onChange={this.update('password')}
-            className="login-input"
-            placeholder="Password"
-          />
-        <br/>
-        <input className="submit" type="submit" value="Submit" />
+          {this.inputField("first_name", "First Name")}
+          <br/>
+          {this.inputField("last_name", "Last Name")}
+          <br/>
+          {this.inputField("email", "Email")}
+          <br/>
+          {this.inputField("username", "Username")}
+          <br/>
+          {this.inputField("password", "Password")}
+          <br/>
+        <input className="submit input" type="submit" value="Submit" />
       </section> )}};
   loginForm() {
     if (this.props.formType == 'login') {
       return (
         <section className="extra-signup-fields login-form">
           <h2 className="login-greet">Been here before? Welcome back!</h2>
-          <input type="text"
-            value={this.state.username}
-            onChange={this.update('username')}
-            className="login-input"
-            placeholder="Username"
-          />
-        <br/>
-          <input type="password"
-            value={this.state.password}
-            onChange={this.update('password')}
-            className="login-input"
-            placeholder="Password"
-          />
-        <br/>
-        <input className="submit" type="submit" value="Submit" />
-      </section> )}};
+          {this.inputField("username", "Username")}
+          <br/>
+          {this.inputField("password", "Password")}
+          <br/>
+          <input className="submit input" type="submit" value="Submit" />
+        </section> )}};
 
   render() {
     return (
       <main className="login-main">
 
-      <section className="login-decor">
+      <section className="login-left">
         <div className="login-content">
-          <div className="login-pics">
-            <img className="login-pips" src="http://lorempixel.com/100/100/cats" />
-            <img className="login-pips" src="http://lorempixel.com/100/100/cats" />
-            <img className="login-pips" src="http://lorempixel.com/100/100/cats" />
+          <img className="logo" src="/assets/logo_dog.png"/>
+          <div className="login-pics-box">
+            <img className="login-pics" id="racoon" src="/assets/racoon.png" />
+            <img className="login-pics" id="shark" src="/assets/shark.png" />
+            <img className="login-pics" id="turtle" src="/assets/turtle.png" />
           </div>
           <h1 className="login-quote">Join millions of people never forgetting to check
           things off their list!</h1>
         </div>
       </section>
 
-      <section className="login-form-container">
-        {this.navLink()}
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          <br/>
-          { this.signupForm() }
-          { this.loginForm() }
-        </form>
+      <section className="login-right">
+        <div className="link-form">
+          {this.navLink()}
+          <form onSubmit={this.handleSubmit} className="login-form-box">
+            {this.renderErrors()}
+            <br/>
+            { this.signupForm() }
+            { this.loginForm() }
+          </form>
+        </div>
       </section>
     </main>
     );

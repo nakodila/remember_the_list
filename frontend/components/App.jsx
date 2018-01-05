@@ -12,10 +12,7 @@ import {
 
 const App = () => (
   <div className="container">
-    <header className="appHeader">
-      <h1>Remember The List</h1>
-    </header>
-    <Route path="/" component={HomepageContainer} />
+    <Route exact path="/" component={HomepageContainer} />
     <Route path="/login" component={SessionFormContainer} />
     <Route path="/signup" component={SessionFormContainer} />
   </div>
