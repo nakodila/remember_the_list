@@ -3,7 +3,10 @@ class User < ApplicationRecord
   validates :username, :email, uniqueness: true
   validates :password, length: { minimum: 6 }, allow_nil: true
 
-  has_many :lists, dependent: :destroy
+  has_many :lists,
+    class_name: "List",
+    foreign_key: :author_id,
+    dependent: :destroy
 
   attr_reader :password
 
