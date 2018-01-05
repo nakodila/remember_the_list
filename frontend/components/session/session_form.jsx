@@ -98,11 +98,11 @@ class SessionForm extends React.Component {
 
       <section className="login-left">
         <div className="login-content">
-          <img className="logo" src="/assets/logo_dog.png"/>
+          <img className="logo" src="https://i.imgur.com/kaz094M.png"/>
           <div className="login-pics-box">
-            <img className="login-pics" id="racoon" src="/assets/racoon.png" />
-            <img className="login-pics" id="shark" src="/assets/shark.png" />
-            <img className="login-pics" id="turtle" src="/assets/turtle.png" />
+            <img className="login-pics" id="racoon" src="https://i.imgur.com/SYnma5P.png" />
+            <img className="login-pics" id="shark" src="https://i.imgur.com/gf7DkZr.png" />
+            <img className="login-pics" id="turtle" src="https://i.imgur.com/y04ck1s.png" />
           </div>
           <h1 className="login-quote">Join millions of people never forgetting to check
           things off their list!</h1>
