@@ -1,7 +1,7 @@
 export const fetchLists = () => (
   $.ajax({
     method: 'GET',
-    url: 'api/lists',
+    url: 'api/lists'
   })
 );
 
@@ -25,10 +25,11 @@ export const updateList = list => (
     method: 'PATCH',
     url: `api/lists/${list.id}`,
     data: {list}
-  })
+  }));
+
 export const deleteList = id => (
   $.ajax({
     method: 'DELETE',
-    url: `api/lists/${id}`,
+    url: `api/lists/${id}`
   })
 );

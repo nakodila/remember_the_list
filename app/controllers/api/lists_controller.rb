@@ -12,12 +12,12 @@ class Api::ListsController < ApplicationController
 
   def create
     @list = current_user.lists.new(list_params)
-    @link.author_id = current_user.id
+    # @link.author_id = current_user.id
     if @list.save
-      render '/api/lists/:id'
+      render '/api/lists/show'
     else
       render json: @list.errors.full_messages, status: 422
-      render '/api/lists/new'
+      # render '/api/lists/new'
     end
   end
 
@@ -47,7 +47,7 @@ class Api::ListsController < ApplicationController
 
   private
   def list_params()
-    params.require(:list).permit(:title)
+    params.require(:list).permit(:title, :author_id)
   end
 
 end

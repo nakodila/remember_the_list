@@ -1,1 +1,1 @@
-json.extract! bench, :id, :title, :author_id
+json.extract! list, :id, :title, :author_id
