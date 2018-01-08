@@ -26,7 +26,7 @@ const sessionLinks = () => (
 );
 
 
-const personalGreeting = (currentUser, logout) => (
+const loggedInHomepage = (currentUser, logout) => (
 	<hgroup className="header-group">
 
     <h2 className="header-name">Hi, {currentUser.username}!</h2>
@@ -36,7 +36,7 @@ const personalGreeting = (currentUser, logout) => (
 );
 
 const Homepage = ({ currentUser, logout }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
+  currentUser ? loggedInHomepage(currentUser, logout) : sessionLinks()
 );
 
 export default Homepage;
