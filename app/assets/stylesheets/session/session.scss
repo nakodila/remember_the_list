@@ -5,6 +5,7 @@ section {
 .login-main {
   display: flex;
   flex-direction: row;
+  height:100vh;
 }
 
 .login-content {
@@ -44,12 +45,8 @@ section {
   margin: 20px;
 }
 
-.logo {
-  width: 70px;
-  margin-top: 30px;
-}
 #racoon {
-  background: #E84A27;
+  background: #98CAFF;
 }
 #shark {
   background: #FFE48C;
@@ -134,7 +131,6 @@ section {
 
 .login-signup-link {
     float: right;
-    margin: 43px -2px 0 0;
     font-size: 13px;
     padding: 5px 11px 4px;
     font-weight: 600;
@@ -151,7 +147,6 @@ section {
     white-space: nowrap;
     line-height: 1.42857143;
     border-radius: 3px;
-
 }
 
 @media screen and (max-width: 690px) {

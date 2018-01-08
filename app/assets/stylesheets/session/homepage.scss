@@ -1,0 +1,121 @@
+
+.homepage-main {
+  display: grid;
+  grid-template-columns: [one] 163px [two] auto;
+  grid-template-rows: [one] 100px [two] 213px [three] 1fr [four] 100px;
+  grid-template-areas:
+  "header header"
+  "link link"
+  "section section"
+  "footer footer";
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: white;
+  padding: 0 20%;
+  max-width: 900px;
+}
+
+.homepage-navbar-it {
+    padding: 15px;
+    font-size: 13px;
+    padding: 5px 11px 4px;
+    font-weight: 400;
+    display: inline-block;
+    margin-bottom: 0;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    white-space: nowrap;
+    line-height: 1.42857143;
+    opacity: 0.75;
+}
+
+.homepage-navbar-it:hover {
+  opacity: .9;
+}
+.signup-border {
+  border: 2px solid white;
+  border-radius: 4px;
+  margin-left: 30px;
+}
+
+.navBar{
+  display: grid;
+  grid-area: header;
+  grid-template-columns: [one] 163px [two] auto;
+  grid-template-rows: [one] 100px;
+  grid-template-areas: "logo" "homepageNav";
+}
+
+.homepage-ctr-signup {
+  display: grid;
+  grid-area: link;
+  grid-template-columns: [one] auto;
+  grid-template-rows: [one] auto [two] 100px;
+  grid-template-areas: "homepageTxt" "redSignuoBtn";
+}
+
+.homepage-txt {
+  grid-area: homepageTxt;
+  justify-self: center;
+  align-self: end;
+  font-size: 37px;
+  font-weight: 400;
+}
+
+.red-signup-btn{
+  grid-area: redSignuoBtn;
+  justify-self: center;
+  align-self: center;
+  font-size: 20px;
+  padding: 11px 32px 12px;
+  line-height: 1.2;
+  background-color: #e54815;
+  border-color: transparent;
+  border-radius: 4px;
+}
+
+.red-signup-btn:hover {
+  background-color: #ca492e;
+}
+
+.signup-art {
+  grid-area: section;
+  margin-top: 20px;
+  height: 560px;
+  padding-bottom: 200px;
+}
+
+.logo-div {
+  grid-area: logo;
+  grid-column-start: one;
+  grid-column-end: one;
+  grid-row-start: one;
+  grid-row-end: one;
+}
+
+.homepageNav {
+  grid-area: homepageNav;
+  grid-column-start: two;
+  grid-column-end: two;
+  grid-row-start: one;
+  grid-row-end: one;
+  justify-self: end;
+  align-self: center;
+}
+.homepage-navbar-it {
+  align-self: center;
+}
+
+// .footer {
+//   grid-area: footer;
+//   grid-column-start: one;
+//   grid-column-end: two;
+//   grid-row-start: four;
+//   grid-row-end: four;
+//   justify-self: center;
+//   align-self: center;
+//   color: #8b8b94;
+//   font-size: 11px;
+//   background: white;
+//   width:100%;
+// }
