@@ -5,7 +5,7 @@ const sessionLinks = () => (
     <main className="homepage-main">
         <nav className="login-signup navBar">
           <div className="logo-div">
-            <img src="/assets/logo.svg" alt="logo" className="logo"/>
+            <img src="http://kurenkov.tv/lena/remember_the_list_logo_01.svg" alt="logo" className="logo"/>
           </div>
 
           <div className="homepageNav">

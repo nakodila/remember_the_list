@@ -4,6 +4,7 @@ export const RECEIVE_LISTS = 'RECEIVE_LISTS';
 export const RECEIVE_LIST = 'RECEIVE_LIST';
 export const REMOVE_LISTS = 'REMOVE_LIST';
 export const RECEIVE_LIST_ERRORS = 'RECEIVE_LIST_ERRORS';
+export const CLEAR_LIST_ERRORS = 'CLEAR_LIST_ERRORS';
 
 
 const receiveLists = (lists) => {
@@ -25,10 +26,16 @@ const removeList = (list) => {
   }
 };
 
-export const receiveErrors = errors => ({
+export const receiveListErrors = errors => ({
   type: RECEIVE_LIST_ERRORS,
   errors
 });
+
+export const clearListErrors = () => ({
+  type: CLEAR_LIST_ERRORS,
+});
+
+
 
 export const fetchLists = () => (dispatch) => {
   return listAPIUtil.fetchLists().then(lists => dispatch(receiveLists(lists)));

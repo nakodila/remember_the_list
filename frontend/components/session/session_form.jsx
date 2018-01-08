@@ -44,14 +44,14 @@ class SessionForm extends React.Component {
   }
 
   clearErrors() {
-    
+
     this.props.clearSessionErrors();
   };
 
 
   navLink() {
     if (this.props.formType === 'login') {
-      return <Link onClick={this.clearErrors()} to="/signup"  className="login-signup-link">Sign up for free</Link>;
+      return <Link onClick={this.clearErrors} to="/signup"  className="login-signup-link">Sign up for free</Link>;
       } else {
         return <Link onClick={this.clearErrors} to="/login"  className="login-signup-link">Log in</Link>;
         }
@@ -117,7 +117,7 @@ class SessionForm extends React.Component {
       <section className="login-left">
         <div className="login-content">
           <nav className="navBar">
-            <img className="logo" src="/assets/logo.svg"/>
+            <img className="logo" src="http://kurenkov.tv/lena/remember_the_list_logo_01.svg" alt="logo"/>
           </nav>
           <div className="login-pics-box">
             <img className="login-pics" id="racoon" src="https://i.imgur.com/SYnma5P.png" />
