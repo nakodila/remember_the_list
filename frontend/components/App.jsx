@@ -9,7 +9,6 @@ import {
   HashRouter
 } from 'react-router-dom';
 
-
 const App = () => (
   <div className="container">
     <Route exact path="/" component={HomepageContainer} />

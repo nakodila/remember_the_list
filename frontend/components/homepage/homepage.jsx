@@ -20,7 +20,7 @@ const sessionLinks = () => (
       <div className="signup-art">
         <img src="https://i.imgur.com/DBe6uid.png" alt="Dont forget to call Bob"/>
       </div>
-      <footer className="footer">Created by Elena Kuzmicheva</footer>
+      <footer className="footer"></footer>
     </main>
 );
 
