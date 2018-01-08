@@ -1,20 +1,23 @@
 import { connect } from 'react-redux';
-
-import * from '../../actions/list_actions';
-import ListComp from './list_component';
+import * as ListActions from '../../actions/list_actions';
+import ListIndex from './list_component';
 
 const mapStateToProps = (state) => {
-  return{
-
-  }
+    return {
+      errors: state.errors.list,
+      lists: Object.values(state.session.currentUser.lists)
+    };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchLists: () => dispatch(fetchLists()),
-    fetchList: (id) => dispatch(fetchList(id)),
-    createList: (list) => dispatch(createList(list)),
-    updateList: (id) => dispatch(updateList(id)),
-    deleteList: (id) => dispatch(deleteList(id)),
+    fetchLists: () => dispatch(ListActions.fetchLists()),
+    fetchList: (id) => dispatch(ListActions.fetchList(id)),
+    createList: (list) => dispatch(ListActions.createList(list)),
+    updateList: (id) => dispatch(ListActions.updateList(id)),
+    deleteList: (id) => dispatch(ListActions.deleteList(id)),
+    clearListErrors: () => dispatch(ListActions.clearListErrors()),
   }
-}
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(ListIndex);

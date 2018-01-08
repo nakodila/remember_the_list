@@ -35,8 +35,6 @@ export const clearListErrors = () => ({
   type: CLEAR_LIST_ERRORS,
 });
 
-
-
 export const fetchLists = () => (dispatch) => {
   return listAPIUtil.fetchLists().then(lists => dispatch(receiveLists(lists)));
 };

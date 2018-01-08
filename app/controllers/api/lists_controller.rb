@@ -3,6 +3,7 @@ class Api::ListsController < ApplicationController
 
   def index
     @lists = current_user.lists
+    @user = current_user
     render "/api/lists/index"
   end
 
@@ -16,10 +17,6 @@ class Api::ListsController < ApplicationController
     end
   end
 
-  def show
-    @list = current_user.lists.find(params[:id])
-  end
-
   def update
     @list = current_user.lists.find(params[:id])
     if @list.update(list_params)
@@ -31,9 +28,9 @@ class Api::ListsController < ApplicationController
   end
 
   def destroy
-    list =  current_user.lists.find(params[:id])
-    list.destroy
-    render '/api/lists'
+    @list =  current_user.lists.find(params[:id])
+    @list.destroy
+    render :show
   end
 
   private
