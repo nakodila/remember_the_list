@@ -3,21 +3,16 @@ class Api::ListsController < ApplicationController
 
   def index
     @lists = current_user.lists
-    render "/api/lists"
-  end
-
-  def new
-    @list = List.new
+    render "/api/lists/index"
   end
 
   def create
     @list = current_user.lists.new(list_params)
-    # @link.author_id = current_user.id
     if @list.save
       render '/api/lists/show'
     else
       render json: @list.errors.full_messages, status: 422
-      # render '/api/lists/new'
+
     end
   end
 
@@ -25,17 +20,13 @@ class Api::ListsController < ApplicationController
     @list = current_user.lists.find(params[:id])
   end
 
-  def edit
-    @list = current_user.lists.find(params[:id])
-  end
-
   def update
     @list = current_user.lists.find(params[:id])
     if @list.update(list_params)
-      render '/api/lists/:id'
+      render '/api/lists/show'
     else
       render json: @list.errors.full_messages, status: 422
-      render '/api/lists/:id'
+      render '/api/lists/show'
     end
   end
 

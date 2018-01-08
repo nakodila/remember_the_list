@@ -21,7 +21,7 @@ const receiveList = (list) => {
 const removeList = (list) => {
   return {
     type: 'REMOVE_LIST',
-  listId: list.id
+    listId: list.id
   }
 };
 

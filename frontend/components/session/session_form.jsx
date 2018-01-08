@@ -12,6 +12,8 @@ class SessionForm extends React.Component {
       email: '',
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemoLogin = this.handleDemoLogin.bind(this);
+    this.clearErrors = this.clearErrors.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -32,13 +34,27 @@ class SessionForm extends React.Component {
     this.props.processForm({user});
   }
 
+  handleDemoLogin(e){
+    e.preventDefault();
+    const user = {
+      username: 'nakodila',
+      password: 'pass123'
+    };
+    this.props.login({user});
+  }
+
+  clearErrors(e) {
+    this.props.clearSessionErrors();
+  };
+
+
   navLink() {
     if (this.props.formType === 'login') {
-      return <Link to="/signup" className="login-signup-link">Sign up for free</Link>;
-    } else {
-      return <Link to="/login" className="login-signup-link">Log in</Link>;
-    }
-  }
+      return <Link onClick={this.clearErrors} to="/signup"  className="login-signup-link">Sign up for free</Link>;
+      } else {
+        return <Link onClick={this.clearErrors} to="/login"  className="login-signup-link">Log in</Link>;
+        }
+      }
 
   renderErrors() {
     if (this.props.errors === null) {
@@ -62,7 +78,8 @@ class SessionForm extends React.Component {
             className="login-input input"
             placeholder={placeholder}
           />
-  }
+      }
+
   signupForm() {
     if (this.props.formType == 'signup') {
       return (
@@ -80,6 +97,7 @@ class SessionForm extends React.Component {
           <br/>
         <input className="submit input" type="submit" value="Submit" />
       </section> )}};
+
   loginForm() {
     if (this.props.formType == 'login') {
       return (
@@ -120,6 +138,7 @@ class SessionForm extends React.Component {
             <br/>
             { this.signupForm() }
             { this.loginForm() }
+            <button onClick={this.handleDemoLogin} className="submit input demo-submit"> Demo Login </button>
           </form>
         </div>
       </section>
