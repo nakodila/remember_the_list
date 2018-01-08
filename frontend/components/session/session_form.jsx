@@ -43,14 +43,15 @@ class SessionForm extends React.Component {
     this.props.login({user});
   }
 
-  clearErrors(e) {
+  clearErrors() {
+    
     this.props.clearSessionErrors();
   };
 
 
   navLink() {
     if (this.props.formType === 'login') {
-      return <Link onClick={this.clearErrors} to="/signup"  className="login-signup-link">Sign up for free</Link>;
+      return <Link onClick={this.clearErrors()} to="/signup"  className="login-signup-link">Sign up for free</Link>;
       } else {
         return <Link onClick={this.clearErrors} to="/login"  className="login-signup-link">Log in</Link>;
         }
