@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import List from './list_index_item';
 
 
@@ -13,7 +13,8 @@ class ListIndex extends React.Component {
     });
     return (
       <div>
-        <a className="listNav" href="#">Lists</a>
+        <h2>Lists</h2>
+
         <ul>{lists}</ul>
         <Link to={`/lists/new`}>Link to New Form</Link>
       </div>
@@ -21,4 +22,4 @@ class ListIndex extends React.Component {
   };
 };
 
-export default ListIndex;
+export default withRouter(ListIndex);

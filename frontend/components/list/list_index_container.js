@@ -1,11 +1,13 @@
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import * as ListActions from '../../actions/list_actions';
-import ListIndex from './list_component';
+import ListIndex from './list_index_component';
 
 const mapStateToProps = (state) => {
     return {
       errors: state.errors.list,
-      lists: Object.values(state.session.currentUser.lists)
+      // currentUserLists: state.session.currentUser.listIds,
+      lists: Object.values(state.lists)
     };
 };
 
@@ -20,4 +22,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(ListIndex);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(ListIndex));

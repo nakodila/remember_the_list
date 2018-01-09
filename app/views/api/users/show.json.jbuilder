@@ -1,5 +1,15 @@
-json.partial! "api/users/user", user: @user
+json.user do
+  json.id @user.id
+  json.username @user.username
+  json.listIds @user.lists.ids
+end
 
 json.lists do
-  json.array! @user.lists, partial: 'api/lists/list', as: :list
+  @user.lists.each do |list|
+    json.set! list.id do
+      json.id list.id
+      json.title list.title
+      json.authorId list.author_id
+    end
+  end
 end

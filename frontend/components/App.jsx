@@ -11,9 +11,11 @@ import {
 
 const App = () => (
   <div className="container">
-    <Route exact path="/" component={HomepageContainer} />
-    <Route path="/login" component={SessionFormContainer} />
-    <Route path="/signup" component={SessionFormContainer} />
+    <Switch>
+      <Route path="/login" component={SessionFormContainer} />
+      <Route path="/signup" component={SessionFormContainer} />
+      <Route path="/" component={HomepageContainer} />
+    </Switch>
   </div>
 );
 
