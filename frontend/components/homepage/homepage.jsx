@@ -3,6 +3,7 @@ import { Route, Link } from 'react-router-dom';
 import ListIndexContainer from '../list/list_index_container';
 import ListShowContainer from '../list/list_show_container';
 import ListFormContainer from '../list/list_form_container';
+import TaskIndexContainer from '../task/task_index_container';
 
 
 
@@ -37,6 +38,7 @@ const loggedInHomepage = (currentUser, logout) => (
 
     <h2 className="header-name">Hi, { currentUser.username }!</h2>
     <ListIndexContainer />
+    <TaskIndexContainer />
     <Route path="/lists/new" component={ ListFormContainer } />
     <Route path="/lists/:id" component={ ListShowContainer } />
     <Route path="/lists/:id/edit" component={ ListFormContainer } />
