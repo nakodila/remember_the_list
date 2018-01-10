@@ -16,7 +16,6 @@ class Api::TasksController < ApplicationController
       render '/api/tasks/index'
     else
       render json: @task.errors.full_messages, status: 422
-
     end
   end
 
@@ -42,7 +41,7 @@ class Api::TasksController < ApplicationController
 
   private
   def task_params()
-    params.require(:task).permit(:title)
+    params.require(:task).permit(:body)
   end
 
 end
