@@ -7,5 +7,10 @@ class List < ApplicationRecord
   belongs_to :author,
     class_name: "User",
     foreign_key: :author_id
-    
+
+    has_many :tasks,
+      class_name: "Task",
+      foreign_key: :list_id,
+      dependent: :destroy
+
 end

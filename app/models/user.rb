@@ -8,6 +8,11 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     dependent: :destroy
 
+  has_many :tasks,
+    class_name: "Task",
+    foreign_key: :user_id,
+    dependent: :destroy
+
   attr_reader :password
 
   after_initialize :ensure_session_token
