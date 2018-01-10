@@ -1,6 +1,9 @@
 import React from 'react';
 import HomepageContainer from './homepage/homepage_container';
 import SessionFormContainer from './session/session_form_container';
+import ListIndexContainer from './list/list_index_container';
+
+
 import {
   Route,
   Redirect,
@@ -12,9 +15,11 @@ import {
 const App = () => (
   <div className="container">
     <Switch>
-      <Route path="/login" component={SessionFormContainer} />
-      <Route path="/signup" component={SessionFormContainer} />
-      <Route path="/" component={HomepageContainer} />
+      <Route path="/login" component={ SessionFormContainer } />
+      <Route path="/signup" component={ SessionFormContainer } />
+      <Route path="/" component={ HomepageContainer } />
+
+
     </Switch>
   </div>
 );

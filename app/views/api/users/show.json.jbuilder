@@ -9,7 +9,7 @@ json.lists do
     json.set! list.id do
       json.id list.id
       json.title list.title
-      json.authorId list.author_id
+      json.author_id list.author_id
     end
   end
 end

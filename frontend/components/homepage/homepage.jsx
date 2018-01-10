@@ -2,6 +2,10 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import ListIndexContainer from '../list/list_index_container';
 import ListShowContainer from '../list/list_show_container';
+import ListFormContainer from '../list/list_form_container';
+
+
+
 
 
 const sessionLinks = () => (
@@ -31,10 +35,11 @@ const sessionLinks = () => (
 const loggedInHomepage = (currentUser, logout) => (
 	<hgroup className="header-group">
 
-    <h2 className="header-name">Hi, {currentUser.username}!</h2>
+    <h2 className="header-name">Hi, { currentUser.username }!</h2>
     <ListIndexContainer />
-    <Route path="/lists/:id" component={ListShowContainer} />
-
+    <Route path="/lists/new" component={ ListFormContainer } />
+    <Route path="/lists/:id" component={ ListShowContainer } />
+    <Route path="/lists/:id/edit" component={ ListFormContainer } />
   <button className="header-button" onClick={logout}>Log Out</button>
 	</hgroup>
 );

@@ -13,10 +13,10 @@ const receiveLists = (lists) => {
     lists
   }
 };
-const receiveList = (list) => {
+const receiveList = (payload) => {
   return {
     type: RECEIVE_LIST,
-    list
+    list: payload.list
   }
 }
 const removeList = (list) => {
@@ -40,7 +40,7 @@ export const fetchLists = () => (dispatch) => {
 };
 
 export const fetchList = (id) => (dispatch) => {
-  return listAPIUtil.fetchList(id).then(list => dispatch(receiveList(list)));
+  return listAPIUtil.fetchList(id).then(payload => dispatch(receiveList(payload)));
 };
 
 export const createList = (list) => (dispatch) => {

@@ -4,20 +4,27 @@ import merge from 'lodash/merge';
 
 
 const listsReducer = (state = {}, action) => {
+  let newState;
   Object.freeze(state);
   switch (action.type) {
     case RECEIVE_LISTS:
     return action.lists;
     case RECEIVE_LIST:
-    return merge({}, state, {[action.lists.id]: action.list});
+    return merge({}, state, {[action.list.id]: action.list});
     case REMOVE_LIST:
-    let newState = merge({}, state);
+    newState = merge({}, state);
     delete newState[action.listId];
     return newState;
-
+    case RECEIVE_CURRENT_USER:
+    if (action.payload === null){
+      return null;
+      }
+    newState = merge({}, state, action.payload.lists);
+    // return merge({}, { currentUser: action.payload.user });
     // case RECEIVE_CURRENT_USER:
-    // const { user } = action.payload;
-    return merge({}, { currentUser: user });
+    // if {action.payload === null}
+    // newState = action.payload === null ? null : action.payload.lists;
+    return newState;
     default:
     return state;
   }

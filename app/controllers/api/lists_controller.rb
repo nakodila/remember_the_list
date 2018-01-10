@@ -1,3 +1,5 @@
+require 'byebug'
+
 class Api::ListsController < ApplicationController
   before_action :require_login
 
@@ -9,6 +11,7 @@ class Api::ListsController < ApplicationController
 
   def create
     @list = current_user.lists.new(list_params)
+    @list.author_id = current_user.id
     if @list.save
       render '/api/lists/show'
     else
@@ -27,15 +30,19 @@ class Api::ListsController < ApplicationController
     end
   end
 
+  def show
+    @list = current_user.lists.find(params[:id])
+  end
+
   def destroy
-    @list =  current_user.lists.find(params[:id])
+    @list = current_user.lists.find(params[:id])
     @list.destroy
-    render :show
+    render '/api/lists/show'
   end
 
   private
   def list_params()
-    params.require(:list).permit(:title, :author_id)
+    params.require(:list).permit(:title)
   end
 
 end

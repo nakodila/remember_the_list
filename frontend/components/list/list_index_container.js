@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import * as ListActions from '../../actions/list_actions';
 import ListIndex from './list_index_component';
 
+
 const mapStateToProps = (state) => {
     return {
       errors: state.errors.list,

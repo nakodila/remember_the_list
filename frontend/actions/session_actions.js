@@ -20,8 +20,8 @@ export const clearSessionErrors = () => ({
 
 export const signup = function(user){
   return function(dispatch){
-    return APIUtil.signup(user).then((user)=>{
-      dispatch(receiveCurrentUser(user)); dispatch(clearSessionErrors);
+    return APIUtil.signup(user).then((payload)=>{
+      dispatch(receiveCurrentUser(payload)); dispatch(clearSessionErrors);
     },(err) => {
       dispatch(receiveErrors(err.responseJSON));
     });
@@ -29,15 +29,15 @@ export const signup = function(user){
 };
 
 export const login = user => dispatch => (
-  APIUtil.login(user).then(user => {
-    dispatch(receiveCurrentUser(user)); dispatch(clearSessionErrors);
+  APIUtil.login(user).then(payload => {
+    dispatch(receiveCurrentUser(payload)); dispatch(clearSessionErrors);
   }, err => {
     dispatch(receiveErrors(err.responseJSON))
   })
 );
 
 export const logout = () => dispatch => (
-  APIUtil.logout().then(user => (
+  APIUtil.logout().then(() => (
     dispatch(receiveCurrentUser(null))
   ))
 );

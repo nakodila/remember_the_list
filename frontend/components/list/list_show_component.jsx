@@ -3,12 +3,13 @@ import { Link, withRouter } from 'react-router-dom';
 
 class ListShow extends React.Component {
   componentDidMount() {
-    debugger
-    this.props.fetchList(this.props.match.params.listId);
+    this.props.fetchList(this.props.match.params.id);
   }
 
   componentWillReceiveProps(nextProps) {
-    this.props.fetchList(nextProps.match.params.listId);
+    if (this.props.match.params.id !== nextProps.match.params.id) {
+      return this.props.fetchList(nextProps.match.params.id);
+    }
   }
 
   render () {
