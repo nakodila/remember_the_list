@@ -16,13 +16,15 @@ json.tasks do
       json.authorId task.author_id
       json.listId task.list_id
       json.parentId task.parent_task_id
+      json.dueDate task.due_date
+
       if task.subtasks == []
           json.subtasks []
       else
         subtasks = []
         task.subtasks.each do |subtask|
           subtasks << subtask.id
-        end
+      end
         json.subtasks subtasks
     end
   end

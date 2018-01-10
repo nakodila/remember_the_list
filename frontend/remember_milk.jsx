@@ -6,7 +6,15 @@ import * as SessionActions from './actions/session_actions';
 import * as ListActions from './actions/list_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const store = configureStore();
+  let store = configureStore();
+  if (window.currentUser) {
+    const preloadedState = {
+      session: {
+        currentUser: window.currentUser,
+      },
+    };
+    store = configureStore(preloadedState);
+  }
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);
   window.getState = store.getState;

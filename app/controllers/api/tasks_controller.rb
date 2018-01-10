@@ -10,6 +10,7 @@ class Api::TasksController < ApplicationController
   def create
     @task = current_user.tasks.new(task_params)
     @task.author_id = current_user.id
+    @task.done = false
     if @task.save
       render '/api/tasks/index'
     else
@@ -39,7 +40,7 @@ class Api::TasksController < ApplicationController
 
   private
   def task_params()
-    params.require(:task).permit(:body)
+    params.require(:task).permit(:body, :author_id)
   end
 
 end
