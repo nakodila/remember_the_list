@@ -5,6 +5,7 @@ import configureStore from './store/store';
 import * as SessionActions from './actions/session_actions';
 import * as ListActions from './actions/list_actions';
 
+//bootstrapping currentUser to the window from session reducer
 document.addEventListener('DOMContentLoaded', () => {
   let store = configureStore();
   if (window.currentUser) {
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     store = configureStore(preloadedState);
   }
+
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);
   window.getState = store.getState;
@@ -24,7 +26,4 @@ document.addEventListener('DOMContentLoaded', () => {
   window.logout = SessionActions.logout;
   window.createList = ListActions.createList;
   window.fetchLists = ListActions.fetchLists;
-
-
-
 });
