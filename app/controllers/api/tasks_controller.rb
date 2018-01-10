@@ -1,5 +1,3 @@
-require 'byebug'
-
 class Api::TasksController < ApplicationController
   before_action :require_login
 
