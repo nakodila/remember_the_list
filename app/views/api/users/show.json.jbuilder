@@ -1,7 +1,6 @@
 json.user do
   json.id @user.id
   json.username @user.username
-  json.listIds @user.lists.ids
 end
 
 json.lists do

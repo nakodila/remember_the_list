@@ -16,14 +16,10 @@ const listsReducer = (state = {}, action) => {
     delete newState[action.listId];
     return newState;
     case RECEIVE_CURRENT_USER:
-    if (action.payload === null){
-      return null;
+    newState = merge({}, state);
+    if (action.payload.user === null){
+      newState = merge({}, { lists : null });
       }
-    newState = merge({}, state, action.payload.lists);
-    // return merge({}, { currentUser: action.payload.user });
-    // case RECEIVE_CURRENT_USER:
-    // if {action.payload === null}
-    // newState = action.payload === null ? null : action.payload.lists;
     return newState;
     default:
     return state;

@@ -40,7 +40,7 @@ class Api::TasksController < ApplicationController
 
   private
   def task_params()
-    params.require(:task).permit(:body, :author_id)
+    params.require(:task).permit(:body)
   end
 
 end

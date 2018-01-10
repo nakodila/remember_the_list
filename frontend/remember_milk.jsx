@@ -24,7 +24,4 @@ document.addEventListener('DOMContentLoaded', () => {
   window.logout = SessionActions.logout;
   window.createList = ListActions.createList;
   window.fetchLists = ListActions.fetchLists;
-
-
-
 });
