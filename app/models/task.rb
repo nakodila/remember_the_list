@@ -10,7 +10,7 @@ class Task < ApplicationRecord
 
   belongs_to :author,
     class_name: 'User',
-    foreign_key: :author_id,
+    foreign_key: :author_id
 
   belongs_to :list,
     class_name: 'List',
