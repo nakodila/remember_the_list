@@ -9,15 +9,18 @@ class ListIndex extends React.Component {
     this.props.fetchLists();
   }
   render() {
+
     let lists = this.props.lists.map((list) => {
-      return <List list={list} key={list.id} deleteList={this.props.deleteList} updateList={this.props.updateList}/>;
+      return <List list={list} key={list.id}
+              deleteList={this.props.deleteList}
+              updateList={this.props.updateList}
+            />;
     });
     return (
       <div>
         <h2>Lists</h2>
-
-        <ul>{lists}</ul>
         <ListFormContainer />
+        <ul>{lists}</ul>
       </div>
     );
   };

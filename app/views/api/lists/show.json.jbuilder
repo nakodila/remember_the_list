@@ -7,7 +7,6 @@ json.list do
   json.authorId @list.author_id
 end
 
-
 json.tasks do
   @list.tasks.each do |task|
     json.set! task.id do
@@ -17,15 +16,8 @@ json.tasks do
       json.listId task.list_id
       json.parentId task.parent_task_id
       json.dueDate task.due_date
-
-      if task.subtasks == []
-          json.subtasks []
-      else
-        subtasks = []
-        task.subtasks.each do |subtask|
-          subtasks << subtask.id
-      end
-        json.subtasks subtasks
+      json.done task.done
+      json.subtasks task.subtasks
     end
   end
 end

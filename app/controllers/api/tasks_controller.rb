@@ -1,3 +1,5 @@
+require 'byebug'
+
 class Api::TasksController < ApplicationController
   before_action :require_login
 
@@ -8,23 +10,25 @@ class Api::TasksController < ApplicationController
   end
 
   def create
+        
     @task = current_user.tasks.new(task_params)
     @task.author_id = current_user.id
     @task.done = false
     if @task.save
-      render '/api/tasks/index'
+      render '/api/tasks/show'
     else
       render json: @task.errors.full_messages, status: 422
     end
   end
 
   def update
+
     @task = current_user.tasks.find(params[:id])
     if @task.update(task_params)
-      render '/api/tasks/index'
+      render '/api/tasks/show'
     else
       render json: @task.errors.full_messages, status: 422
-      render '/api/tasks/index'
+      render '/api/tasks/show'
     end
   end
 
@@ -35,12 +39,12 @@ class Api::TasksController < ApplicationController
   def destroy
     @task = current_user.tasks.find(params[:id])
     @task.destroy
-    render '/api/tasks/index'
+    render '/api/tasks/show'
   end
 
   private
   def task_params()
-    params.require(:task).permit(:body, :author_id)
+    params.require(:task).permit(:body, :done, :due_date, :list_id)
   end
 
 end

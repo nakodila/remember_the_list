@@ -19,10 +19,10 @@ const receiveList = (payload) => {
     list: payload.list
   }
 }
-const removeList = (list) => {
+const removeList = (payload) => {
   return {
     type: REMOVE_LIST,
-    listId: list.id
+    listId: payload.list.id
   }
 };
 

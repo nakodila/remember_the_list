@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   has_many :tasks,
     class_name: "Task",
-    foreign_key: :user_id,
+    foreign_key: :author_id,
     dependent: :destroy
 
   attr_reader :password

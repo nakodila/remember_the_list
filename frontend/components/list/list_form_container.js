@@ -7,7 +7,6 @@ const mapStateToProps = (state, ownProps) => {
   let list = { title: "" };
   let formType = "new";
   if (ownProps.match.path == "/lists/:id/edit") {
-    // debugger
     list = state.lists[ownProps.match.params.id];
     formType = "edit";
   }

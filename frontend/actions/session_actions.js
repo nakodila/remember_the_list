@@ -20,7 +20,7 @@ export const clearSessionErrors = () => ({
 
 export const signup = function(user){
   return function(dispatch){
-    return APIUtil.signup(user).then((payload)=>{
+    return APIUtil.signup(user).then((payload) => {
       dispatch(receiveCurrentUser(payload)); dispatch(clearSessionErrors);
     },(err) => {
       dispatch(receiveErrors(err.responseJSON));
