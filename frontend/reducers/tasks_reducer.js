@@ -1,4 +1,4 @@
-import { RECEIVE_TASKS, RECEIVE_TASK, REMOVE_TASK, TOGGLE_DONE } from "../actions/task_actions";
+import { RECEIVE_TASKS, RECEIVE_TASK, REMOVE_TASK } from "../actions/task_actions";
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 import merge from 'lodash/merge';
 

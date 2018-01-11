@@ -4,6 +4,7 @@ import ListIndexContainer from '../list/list_index_container';
 import ListShowContainer from '../list/list_show_container';
 import ListFormContainer from '../list/list_form_container';
 import TaskIndexContainer from '../task/task_index_container';
+import TaskShowContainer from '../task/task_show_container'
 
 const sessionLinks = () => (
     <main className="homepage-main">
@@ -28,15 +29,16 @@ const sessionLinks = () => (
     </main>
 );
 
-
 const loggedInHomepage = (currentUser, logout) => (
 	<hgroup className="hmp_loggedIn">
-      <h2 className="header-name">Hi, { currentUser.username }!</h2>
+      <div className="logo-div">
+        <img src="http://kurenkov.tv/lena/remember_the_list_logo_01.svg" alt="logo" className="logo"/>
+      </div>
       <ListIndexContainer />
       <TaskIndexContainer />
-      <Route path="/lists/new" component={ ListFormContainer } />
       <Route path="/lists/:id" component={ ListShowContainer } />
       <Route path="/lists/:id/edit" component={ ListFormContainer } />
+      <Route path="/tasks/:id/edit" component={ TaskShowContainer } />
       <button className="header-button" onClick={logout}>Log Out</button>
 	</hgroup>
 );

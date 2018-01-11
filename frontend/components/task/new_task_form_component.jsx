@@ -5,7 +5,8 @@ class NewTaskForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      body: ""
+      body: "",
+      list_id: null
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -13,18 +14,14 @@ class NewTaskForm extends React.Component {
   }
 
   update(field) {
-    return (e) => {
-      this.setState({[field]: e.target.value});
+    return (e) =>{
+      this.setState({[field]: e.target.value, list_id: this.props.listId});
     };
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createTask(this.state).then(() => this.props.history.push('/'));
-  }
-
-  getListId() {
-    return ownProps.match.params.id
+    this.props.createTask(this.state);
   }
 
   render () {

@@ -5,14 +5,9 @@ import TaskIndex from './task_index_component';
 
 
 const mapStateToProps = (state, ownProps) => {
-    let listId = null;
-    if ( ownProps.match.path === "/lists/:id" ) {
-        list: ownProps.match.params.id
-    }
     return {
         errors: state.errors.task,
         tasks: Object.values(state.tasks),
-        listId: listId
     };
 };
 

@@ -6,10 +6,9 @@ const Task = ({task, deleteTask}) => {
     return (
       <li>
         <DoneTask task={task}/>
-        <Link to={`/tasks/${task.id}`}>{task.body}</Link>
-        <Link to={`/tasks/${task.id}/edit`}>Edit</Link>
+        <Link to={`/tasks/${task.id}/edit`}>{task.body}</Link>
         <button onClick={() => deleteTask(task.id)}>Delete</button>
-    </li>
+      </li>
   );
 };
 

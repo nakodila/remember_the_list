@@ -20,7 +20,6 @@ class ListIndex extends React.Component {
       <div>
         <h2>Lists</h2>
         <ListFormContainer />
-
         <ul>{lists}</ul>
       </div>
     );

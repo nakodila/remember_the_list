@@ -18,7 +18,7 @@ class TaskIndex extends React.Component {
                 updateTask={this.props.updateTask}
                 />;
         });
-        let listId = this.props.ListId;
+        let listId = parseInt(this.props.location.pathname.slice(7));
         return (
             <div>
                 <h4>Add Task</h4>

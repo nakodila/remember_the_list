@@ -10,6 +10,7 @@ class Api::TasksController < ApplicationController
   end
 
   def create
+        
     @task = current_user.tasks.new(task_params)
     @task.author_id = current_user.id
     @task.done = false
@@ -21,6 +22,7 @@ class Api::TasksController < ApplicationController
   end
 
   def update
+
     @task = current_user.tasks.find(params[:id])
     if @task.update(task_params)
       render '/api/tasks/show'
