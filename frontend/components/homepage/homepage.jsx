@@ -33,7 +33,7 @@ const loggedInHomepage = (currentUser, logout) => (
 	<hgroup className="hmp_loggedIn hmp_flex">
     <div className="hmp_lin_grid">
       <div className="logo-div">
-        <img src="http://kurenkov.tv/lena/remember_the_list_logo_01.svg" alt="logo" className="logo"/>
+        <img src="http://kurenkov.tv/lena/remember_the_list_logo_01.svg" alt="logo" className="logo-div"/>
       </div>
       <ListIndexContainer />
       <TaskIndexContainer />

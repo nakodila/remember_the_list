@@ -7,8 +7,8 @@
 .hmp_lin_grid {
   display: grid;
   grid-template-columns: 1fr 2fr 2fr;
-  grid-template-rows: 100px 1fr;
+  grid-template-rows: 50px 1fr;
   grid-template-areas:
-    "listIndex taskIndex itemView"
-
+    "logo taskIndex itemView"
+    "listIndex taskIndex itemView";
 }
