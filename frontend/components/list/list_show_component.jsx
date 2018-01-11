@@ -15,7 +15,8 @@ class ListShow extends React.Component {
     render () {
       const curList = this.props.list;
       return (
-          <div>
+          <div className="item-view">
+            <div className="item-view-inner">
               <h1>{curList.title}</h1>
               <div className="incomplete">
                   <label>tasks</label>
@@ -23,6 +24,7 @@ class ListShow extends React.Component {
               <div className="completed">
                   <label>complete</label>
               </div>
+            </div>
           </div>
         );
     }

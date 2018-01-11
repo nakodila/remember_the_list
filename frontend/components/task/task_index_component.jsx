@@ -20,11 +20,13 @@ class TaskIndex extends React.Component {
         });
         let listId = parseInt(this.props.location.pathname.slice(7));
         return (
-            <div>
+            <div className="task-index">
+              <div className="task-index-inner">
                 <h4>Add Task</h4>
                 <NewTaskForm listId={ listId } />
                 <h2>Tasks</h2>
                 <ul>{tasks}</ul>
+              </div>
             </div>
         );
 

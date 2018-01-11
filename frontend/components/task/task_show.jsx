@@ -19,14 +19,12 @@ class TaskShow extends React.Component {
 
     handleSubmit(e) {
       e.preventDefault();
-      debugger
       this.props.updateTask(this.state);
     }
 
     render () {
-      debugger
       return (
-        <div>
+        <div className="item-view">
           <form onSubmit={this.handleSubmit}>
               <input type="text"
                 placeholder={this.props.task.body}

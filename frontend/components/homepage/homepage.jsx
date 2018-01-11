@@ -30,10 +30,10 @@ const sessionLinks = () => (
 );
 
 const loggedInHomepage = (currentUser, logout) => (
-	<hgroup className="hmp_loggedIn hmp_flex">
-    <div className="hmp_lin_grid">
-      <div className="logo-div">
-        <img src="http://kurenkov.tv/lena/remember_the_list_logo_01.svg" alt="logo" className="logo-div"/>
+	<hgroup className="hmp-loggedIn hmp-flex">
+    <div className="hmp-lin-grid style_hmp_lin">
+      <div className="logo-hmp">
+        <img src="http://kurenkov.tv/lena/remember_the_list_logo_01.svg" alt="logo" className="logo-login" />
       </div>
       <ListIndexContainer />
       <TaskIndexContainer />

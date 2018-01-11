@@ -1,0 +1,53 @@
+// .hmp-flex {
+//   display: flex;
+// }
+.hmp-lin-grid {
+  display: grid;
+  grid-template-columns: [hlgc1] 1fr [hlgc2] 2fr [hlgc3] 2fr;
+  grid-template-rows: [hlgr1] 71px [hlgr2] 1fr;
+  grid-template-areas:
+    "logo taskIndex logout"
+    "listIndex taskIndex itemView";
+  justify-items: stretch;
+}
+
+.logo-hmp {
+  grid-column: hlgc1 / hlgc1;
+  grid-row: hlgr1 / hlgr1;
+  grid-area: logo;
+  justify-self: start;
+
+}
+
+.list-index {
+  grid-column: hlgc1 / hlgc1;
+  grid-row: hlgr2 / hlgr2;
+  grid-area: listIndex;
+  display: grid;
+  justify-content: stretch;
+}
+
+.task-index {
+  grid-column: hlgc2 / hlgc2;
+  grid-row: hlgr1 / hlgr2;
+  grid-area: taskIndex;
+  justify-self: stretch;
+  display: grid;
+  justify-content: stretch;
+
+}
+
+.header-button {
+  grid-column: hlgc3 / hlgc3;
+  grid-row: hlgr1 / hlgr1;
+  grid-area: logout;
+  justify-self: end;
+}
+
+.item-show {
+  grid-column: hlgc3 / hlgc3;
+  grid-row: hlgr2 / hlgr2;
+  grid-area: itemView;
+  display: grid;
+  justify-content: stretch;
+}

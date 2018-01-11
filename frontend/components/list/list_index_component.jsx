@@ -14,13 +14,16 @@ class ListIndex extends React.Component {
       return <List list={list} key={list.id}
               deleteList={this.props.deleteList}
               updateList={this.props.updateList}
+              className="list-item"
             />;
     });
     return (
-      <div>
-        <h2>Lists</h2>
-        <ListFormContainer />
-        <ul>{lists}</ul>
+      <div className="list-index">
+        <div className="list-index-inner">
+          <h2>Lists</h2>
+          <ListFormContainer className="new-list-form"/>
+          <ul>{lists}</ul>
+        </div>
       </div>
     );
   };
