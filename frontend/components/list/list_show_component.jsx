@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import NewTaskForm from '../task/new_task_form_container';
 
 class ListShow extends React.Component {
   componentDidMount() {
@@ -13,10 +14,12 @@ class ListShow extends React.Component {
   }
 
   render () {
-    const list = this.props.list;
+    const curList = this.props.list;
     return (
       <div>
-        <h3>{list.title}</h3>
+        <h3>{curList.title}</h3>
+        <h4>Add New Task</h4>
+        <NewTaskForm listId={curList.id}/>
       </div>
     );
   }

@@ -12,7 +12,7 @@ class Api::TasksController < ApplicationController
     @task.author_id = current_user.id
     @task.done = false
     if @task.save
-      render '/api/tasks/index'
+      render '/api/tasks/show'
     else
       render json: @task.errors.full_messages, status: 422
     end
@@ -21,10 +21,10 @@ class Api::TasksController < ApplicationController
   def update
     @task = current_user.tasks.find(params[:id])
     if @task.update(task_params)
-      render '/api/tasks/index'
+      render '/api/tasks/show'
     else
       render json: @task.errors.full_messages, status: 422
-      render '/api/tasks/index'
+      render '/api/tasks/show'
     end
   end
 
@@ -35,7 +35,7 @@ class Api::TasksController < ApplicationController
   def destroy
     @task = current_user.tasks.find(params[:id])
     @task.destroy
-    render '/api/tasks/index'
+    render '/api/tasks/show'
   end
 
   private
