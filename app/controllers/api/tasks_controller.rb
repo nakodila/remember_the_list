@@ -1,4 +1,3 @@
-require 'byebug'
 
 class Api::TasksController < ApplicationController
   before_action :require_login
@@ -10,7 +9,7 @@ class Api::TasksController < ApplicationController
   end
 
   def create
-        
+
     @task = current_user.tasks.new(task_params)
     @task.author_id = current_user.id
     @task.done = false

@@ -30,7 +30,8 @@ const sessionLinks = () => (
 );
 
 const loggedInHomepage = (currentUser, logout) => (
-	<hgroup className="hmp_loggedIn">
+	<hgroup className="hmp_loggedIn hmp_flex">
+    <div className="hmp_lin_grid">
       <div className="logo-div">
         <img src="http://kurenkov.tv/lena/remember_the_list_logo_01.svg" alt="logo" className="logo"/>
       </div>
@@ -40,6 +41,7 @@ const loggedInHomepage = (currentUser, logout) => (
       <Route path="/lists/:id/edit" component={ ListFormContainer } />
       <Route path="/tasks/:id/edit" component={ TaskShowContainer } />
       <button className="header-button" onClick={logout}>Log Out</button>
+    </div>
 	</hgroup>
 );
 

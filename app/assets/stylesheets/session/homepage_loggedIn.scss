@@ -1,3 +1,14 @@
 .hmp_loggedIn {
   background: pink;
 }
+.hmp_flex {
+  display: flex;
+}
+.hmp_lin_grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-rows: 100px 1fr;
+  grid-template-areas:
+    "listIndex taskIndex itemView"
+
+}
