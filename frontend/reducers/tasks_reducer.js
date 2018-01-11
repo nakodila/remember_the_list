@@ -1,4 +1,4 @@
-import { RECEIVE_TASKS, RECEIVE_TASK, REMOVE_TASK } from "../actions/task_actions";
+import { RECEIVE_TASKS, RECEIVE_TASK, REMOVE_TASK, TOGGLE_DONE } from "../actions/task_actions";
 import { RECEIVE_CURRENT_USER } from "../actions/session_actions";
 import merge from 'lodash/merge';
 
@@ -15,12 +15,6 @@ const tasksReducer = (state = {}, action) => {
     newState = merge({}, state);
     delete newState[action.taskId];
     return newState;
-    // case RECEIVE_CURRENT_USER:
-    // newState = merge({}, state);
-    // if (action.payload.user === null){
-    //   newState = merge({}, { tasks : null });
-    //   }
-    // return newState;
     default:
     return state;
   }

@@ -30,6 +30,7 @@ class ListForm extends React.Component {
 
   render () {
     const text = this.props.formType === 'new' ? "Add a list" : "Rename List";
+    const placeholder_text = this.props.formType === 'new' ? "List Title" : "";
     return (
       <div>
         <h3>{text}</h3>
@@ -37,6 +38,7 @@ class ListForm extends React.Component {
             <input
               type="text"
               value={this.state.title}
+              placeholder={placeholder_text}
               onChange={this.update('title')} />
           <input type="submit" value={text} />
         </form>

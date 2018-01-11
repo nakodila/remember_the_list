@@ -31,8 +31,8 @@ export const receiveTaskErrors = errors => ({
   errors
 });
 
-export const clearTaskErrors = () => ({
-  type: CLEAR_TASK_ERRORS,
+export const clearTaskErrors = () => (dispatch) => ({
+
 });
 
 export const fetchTasks = () => (dispatch) => {

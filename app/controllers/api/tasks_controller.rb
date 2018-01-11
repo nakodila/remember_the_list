@@ -1,3 +1,5 @@
+require 'byebug'
+
 class Api::TasksController < ApplicationController
   before_action :require_login
 
@@ -40,7 +42,7 @@ class Api::TasksController < ApplicationController
 
   private
   def task_params()
-    params.require(:task).permit(:body)
+    params.require(:task).permit(:body, :done, :due_date, :list_id)
   end
 
 end

@@ -30,7 +30,7 @@ const sessionLinks = () => (
 
 
 const loggedInHomepage = (currentUser, logout) => (
-	<hgroup className="header-group">
+	<hgroup className="hmp_loggedIn">
       <h2 className="header-name">Hi, { currentUser.username }!</h2>
       <ListIndexContainer />
       <TaskIndexContainer />

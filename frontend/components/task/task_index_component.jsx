@@ -10,6 +10,7 @@ class TaskIndex extends React.Component {
     componentDidMount() {
         this.props.fetchTasks();
     }
+
     render() {
         let tasks = this.props.tasks.map((task) => {
             return <Task task={task} key={task.id}
