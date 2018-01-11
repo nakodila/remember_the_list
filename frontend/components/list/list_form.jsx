@@ -34,12 +34,10 @@ class ListForm extends React.Component {
       <div>
         <h3>{text}</h3>
         <form onSubmit={this.handleSubmit}>
-          <label>Title
             <input
               type="text"
               value={this.state.title}
               onChange={this.update('title')} />
-          </label>
           <input type="submit" value={text} />
         </form>
       </div>

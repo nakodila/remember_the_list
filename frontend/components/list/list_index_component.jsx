@@ -19,9 +19,9 @@ class ListIndex extends React.Component {
     return (
       <div>
         <h2>Lists</h2>
+        <ListFormContainer />
 
         <ul>{lists}</ul>
-        <ListFormContainer />
       </div>
     );
   };

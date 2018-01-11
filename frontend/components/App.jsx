@@ -18,8 +18,6 @@ const App = () => (
       <Route path="/login" component={ SessionFormContainer } />
       <Route path="/signup" component={ SessionFormContainer } />
       <Route path="/" component={ HomepageContainer } />
-
-
     </Switch>
   </div>
 );

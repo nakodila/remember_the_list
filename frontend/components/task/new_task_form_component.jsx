@@ -31,12 +31,9 @@ class NewTaskForm extends React.Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <label>Add New Task
-            <input
-              type="text"
-              value={this.state.body}
-              onChange={this.update('body')} />
-          </label>
+            <input type="text"
+              onChange={this.update('body')}
+              placeholder="Add new task"/>
           <input type="submit" value="Add Task" />
         </form>
       </div>
