@@ -5,6 +5,53 @@
   line-height: 1.42857143;
 }
 
+.task-li {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.task-item {
+  height: 35px;
+  width: 100%;
+  border-bottom: 1px dotted #e5e5e5;
+}
+
+.task-item:first-of-type {
+  height: 25px;
+}
+
+.task-title {
+  margin: 0 7px;
+}
+
+.task-ul {
+  padding-left: 5px;
+}
+
+.h1-T {
+  margin-top: 10px;
+}
+
+.input-task {
+  width: 100%;
+  height: 30px;
+}
+
+.add-task {
+  height: 30px;
+  font-weight: 700;
+  color: #145275;
+  font-size: 14px;
+  border: 1px solid rgba(20, 82, 117, .5);
+  background: #b0d4f2;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+
 .style-hmp-lin-rigth {
   padding: 10px;
 }
@@ -54,6 +101,7 @@
   align-items: center;
   margin-bottom: 7px;
 }
+
 .add-list {
   font-weight: 700;
   color: #145275;
@@ -65,7 +113,6 @@
   align-items: center;
   justify-content: center;
   padding: 2px;
-
 }
 
 .input-list {
@@ -79,8 +126,19 @@
 
 .fa-trash {
   color: rgba(20, 82, 117, .5);
+  cursor: pointer;
 }
 
+.fa-task {
+  padding-bottom: 2px;
+  margin-left: 7px;
+}
 .list-li {
 
+}
+
+@media only screen and (max-height: 780px) {
+    .li-task-nil {
+      display: none;
+    }
 }

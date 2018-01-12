@@ -29,13 +29,13 @@ class NewTaskForm extends React.Component {
       <div>
         <div className="new-list-form">
           <form onSubmit={this.handleSubmit}>
-            <div className="add-list-form">
+            <div className="add-list-form add-task-form">
               <input
-                className="input-list"
+                className="input-list input-task"
                 type="text"
                 onChange={this.update('body')}
                 placeholder="Add new task"/>
-              <div className="add-list">
+              <div className="add-task add-list">
                 <input type="submit" value="Add Task" />
               </div>
             </div>

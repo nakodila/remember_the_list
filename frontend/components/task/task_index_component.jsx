@@ -23,8 +23,33 @@ class TaskIndex extends React.Component {
             <div className="task-index">
               <div className="task-index-inner">
                 <NewTaskForm listId={ listId } />
-                <h2>Tasks</h2>
-                <ul>{tasks}</ul>
+                <h2 className="h1-T">All Tasks</h2>
+                <div className="task-ul">
+                  <ul>{tasks}</ul>
+                  <div className="task-item"></div>
+                  <div className="task-item"></div>
+                  <div className="task-item"></div>
+                  <div className="task-item"></div>
+                  <div className="task-item"></div>
+                  <div className="task-item"></div>
+                  <div className="task-item"></div>
+                  <div className="task-item"></div>
+                  <div className="task-item"></div>
+                  <div className="task-item"></div>
+                  <div className="task-item"></div>
+                  <div className="task-item"></div>
+                  <div className="task-item"></div>
+                  <div className="task-item"></div>
+                  <div className="task-item"></div>
+                  <div className="li-task-nil">
+                      <div className="task-item"></div>
+                      <div className="task-item"></div>
+                      <div className="task-item"></div>
+                      <div className="task-item"></div>
+                      <div className="task-item"></div>
+                      <div className="task-item"></div>
+                  </div>
+                </div>
               </div>
             </div>
         );

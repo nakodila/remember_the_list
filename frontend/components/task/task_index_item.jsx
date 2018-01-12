@@ -4,10 +4,12 @@ import DoneTask from './done_task_container';
 
 const Task = ({task, deleteTask}) => {
     return (
-      <li>
+      <li className="task-item task-li">
         <DoneTask task={task}/>
-        <Link to={`/tasks/${task.id}/edit`}>{task.body}</Link>
-        <i className="fa fa-trash" aria-hidden="true" onClick={() => deleteList(task.id)}></i>
+        <i className="fa fa-task fa-trash" aria-hidden="true" onClick={() => deleteTask(task.id)}></i>
+        <div className="task-title">
+          <Link to={`/tasks/${task.id}/edit`}>{task.body}</Link>
+        </div>
       </li>
   );
 };
