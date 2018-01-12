@@ -21,7 +21,7 @@ class NewTaskForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createTask(this.state);
+    this.props.createTask(this.state).then(() => this.setState({ body: "" }));
   }
 
   render () {
@@ -34,6 +34,7 @@ class NewTaskForm extends React.Component {
                 className="input-list input-task"
                 type="text"
                 onChange={this.update('body')}
+                value={this.state.body}
                 placeholder="Add new task"/>
               <div className="add-task add-list">
                 <input type="submit" value="Add Task" />

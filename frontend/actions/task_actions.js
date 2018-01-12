@@ -60,8 +60,8 @@ export const createTask = (task) => (dispatch) => {
   });
 };
 
-export const updateTask = (id) => (dispatch) => {
-  return taskAPIUtil.updateTask(id).then(task => { dispatch(receiveTask(task)); dispatch(clearTaskErrors);
+export const updateTask = (task) => (dispatch) => {
+  return taskAPIUtil.updateTask(task).then(task => { dispatch(receiveTask(task)); dispatch(clearTaskErrors);
   }, (err) => {
     dispatch(receiveErrors(err.responseJSON));
   });

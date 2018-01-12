@@ -2,32 +2,41 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 class TaskShow extends React.Component {
-  constructor(props) {
-    super(props);
-    let task = props.task
-    this.state = task
+    constructor(props) {
+      super(props);
 
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.update = this.update.bind(this);
-  }
+      this.state = {body: ""};
 
-    update(field) {
+
+      this.handleSubmit = this.handleSubmit.bind(this);
+      this.update = this.update.bind(this);
+    }
+
+    componentDidMount () {
+      this.props.fetchTask(this.props.match.params.id)
+    }
+
+    componentWillReceiveProps (newProps) {
+      this.setState(newProps.task)
+    }
+
+    update() {
       return (e) =>{
-        this.setState({[field]: e.target.value});
+        this.setState({ body: e.target.value });
       };
     }
 
     handleSubmit(e) {
       e.preventDefault();
-      const task = Object.assign({}, this.state, {task: this.props.task})
-      debugger
-      this.props.updateTask(task);
+      const newState = Object.assign({}, this.state);
+      this.props.updateTask(newState);
+      //then is to rewrite the body to an empty string after callback success,
+      //we need to reset state to clear it of old values
 
     }
 
-    // let list = this.task.list_id;
+    // the field was not deleting text after updating the state: needed value field in the input
     render () {
-      const task = Object.assign({}, this.state, { task: this.props.task })
       return (
         <div className="item-view task-view">
           <div className="new-list-form">
@@ -36,9 +45,9 @@ class TaskShow extends React.Component {
                 <input
                   className="input-item-show"
                   type="text"
-                  value={ task }
-                  placeholder={task.body}
-                  onChange={this.update('body')}/>
+                  value={this.state.body}
+                  placeholder={this.state.body}
+                  onChange={this.update()}/>
                 <div className="add-list">
                   <input className="add-list-p" type="submit" value="Rename Task" />
                 </div>
