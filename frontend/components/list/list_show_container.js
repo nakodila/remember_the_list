@@ -5,7 +5,7 @@ import { fetchList } from '../../actions/list_actions';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-  list: state.lists[ownProps.match.params.id]
+  list: state.lists[ownProps.match.params.id] || {}
 }};
 
 const mapDispatchToProps = dispatch => ({

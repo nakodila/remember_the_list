@@ -19,13 +19,15 @@ class TaskShow extends React.Component {
 
     handleSubmit(e) {
       e.preventDefault();
-      this.props.updateTask(this.state);
+      const task = Object.assign({}, this.state, {task: this.props.task})
+      debugger
+      this.props.updateTask(task);
 
     }
 
     // let list = this.task.list_id;
     render () {
-      debugger
+      const task = Object.assign({}, this.state, { task: this.props.task })
       return (
         <div className="item-view task-view">
           <div className="new-list-form">
@@ -34,8 +36,8 @@ class TaskShow extends React.Component {
                 <input
                   className="input-item-show"
                   type="text"
-                  value={this.props.task.body}
-                  placeholder={this.props.task.body}
+                  value={ task }
+                  placeholder={task.body}
                   onChange={this.update('body')}/>
                 <div className="add-list">
                   <input className="add-list-p" type="submit" value="Rename Task" />

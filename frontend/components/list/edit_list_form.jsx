@@ -19,7 +19,9 @@ class ListEdit extends React.Component {
 
     handleSubmit(e) {
       e.preventDefault();
-      this.props.updateList(this.state);
+      const list = Object.assign({}, this.state, {id: this.props.list.id})
+      //This line is for when you refresh the page. It looses the state and can't fetch the list because the id is gone
+      this.props.updateList(list);
     }
 
     render () {

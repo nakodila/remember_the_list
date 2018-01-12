@@ -4,6 +4,13 @@ export const fetchTasks = () => (
     url: 'api/tasks'
   })
 );
+export const receiveListsTasks = (list_payload) => (
+  $.ajax({
+    method: 'GET',
+    url: `api/lists/${listId}`,
+    data: list_payload.tasks
+  })
+);
 
 export const fetchTask = id => (
   $.ajax({

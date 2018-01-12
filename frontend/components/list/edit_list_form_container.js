@@ -5,7 +5,7 @@ import ListEdit from './edit_list_form';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    list: state.lists[ownProps.match.params.id]
+    list: state.lists[ownProps.match.params.id] || {}
   }
 };
 

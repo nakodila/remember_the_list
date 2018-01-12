@@ -7,12 +7,14 @@ export const RECEIVE_TASK_ERRORS = 'RECEIVE_TASK_ERRORS';
 export const CLEAR_TASK_ERRORS = 'CLEAR_TASK_ERRORS';
 
 
+
 const receiveTasks = (tasks) => {
   return {
     type: RECEIVE_TASKS,
     tasks
   }
 };
+
 const receiveTask = (payload) => {
   return {
     type: RECEIVE_TASK,
@@ -25,6 +27,7 @@ const removeTask = (payload) => {
     taskId: payload.task.id
   }
 };
+
 
 export const receiveTaskErrors = errors => ({
   type: RECEIVE_TASK_ERRORS,
@@ -41,6 +44,7 @@ export const fetchTasks = () => (dispatch) => {
     dispatch(receiveErrors(err.responseJSON));
   });
 };
+
 
 export const fetchTask = (id) => (dispatch) => {
   return taskAPIUtil.fetchTask(id).then(payload => { dispatch(receiveTask(payload)); dispatch(clearTaskErrors);
