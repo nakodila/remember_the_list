@@ -5,6 +5,17 @@
   line-height: 1.42857143;
 }
 
+.style-hmp-lin-rigth {
+  padding: 10px;
+}
+
+.list-index-inner {
+  float: left;
+}
+
+.new-list-form {
+  margin-top: 20px;
+}
 .logo-login {
   height: 71px;
   width: auto;
@@ -13,16 +24,63 @@
 .task-index-inner {
   float: left;
   background: white;
-  border-radius: 3px;
+  border-radius: 4px;
   margin-top: 10px;
-  padding: 20px;
+  padding: 10px;
 }
 
-.list-index-inner {
-  float: left;
-  padding: 20px;
+.list-li {
+  padding: 7px 10px 2px 5px;
+}
+
+.list-li:hover {
+  background: rgba(108, 182, 247, 0.5);
+}
+
+.list-li-inner {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(20, 82, 117, .3);
 }
 
 .item-view-inner {
   float: left;
+}
+
+.add-list-form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 7px;
+}
+.add-list {
+  font-weight: 700;
+  color: #145275;
+  font-size: 14px;
+  border: 1px solid rgba(20, 82, 117, .5);
+  background: #b0d4f2;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+
+}
+
+.input-list {
+  border: 1px solid rgba(20, 82, 117, .5);
+  border-radius: 1px;
+  padding: 2px 3px;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2px;
+}
+
+.fa-trash {
+  color: rgba(20, 82, 117, .5);
+}
+
+.list-li {
+
 }

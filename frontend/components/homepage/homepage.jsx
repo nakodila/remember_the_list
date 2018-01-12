@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import ListIndexContainer from '../list/list_index_container';
 import ListShowContainer from '../list/list_show_container';
-import ListFormContainer from '../list/list_form_container';
+
 import TaskIndexContainer from '../task/task_index_container';
 import TaskShowContainer from '../task/task_show_container'
 
@@ -31,17 +31,18 @@ const sessionLinks = () => (
 
 const loggedInHomepage = (currentUser, logout) => (
 	<hgroup className="hmp-loggedIn hmp-flex">
-    <div className="hmp-lin-grid style_hmp_lin">
-      <div className="logo-hmp">
-        <img src="http://kurenkov.tv/lena/remember_the_list_logo_01.svg" alt="logo" className="logo-login" />
+      <div className="hmp-lin-grid style_hmp_lin">
+          <div className="grid-hmp-lin-rigth style-hmp-lin-rigth">
+              <div className="logo-hmp">
+                  <img src="http://kurenkov.tv/lena/remember_the_list_logo_02.svg" alt="logo" className="logo-login" />
+              </div>
+              <ListIndexContainer />
+          </div>
+          <TaskIndexContainer />
+          <Route path="/lists/:id" component={ ListShowContainer } />
+          <Route path="/tasks/:id/edit" component={ TaskShowContainer } />
+          <button className="header-button" onClick={logout}>Log Out</button>
       </div>
-      <ListIndexContainer />
-      <TaskIndexContainer />
-      <Route path="/lists/:id" component={ ListShowContainer } />
-      <Route path="/lists/:id/edit" component={ ListFormContainer } />
-      <Route path="/tasks/:id/edit" component={ TaskShowContainer } />
-      <button className="header-button" onClick={logout}>Log Out</button>
-    </div>
 	</hgroup>
 );
 

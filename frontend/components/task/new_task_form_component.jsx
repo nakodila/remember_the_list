@@ -27,12 +27,20 @@ class NewTaskForm extends React.Component {
   render () {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-            <input type="text"
-              onChange={this.update('body')}
-              placeholder="Add new task"/>
-          <input type="submit" value="Add Task" />
-        </form>
+        <div className="new-list-form">
+          <form onSubmit={this.handleSubmit}>
+            <div className="add-list-form">
+              <input
+                className="input-list"
+                type="text"
+                onChange={this.update('body')}
+                placeholder="Add new task"/>
+              <div className="add-list">
+                <input type="submit" value="Add Task" />
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
     );
   }

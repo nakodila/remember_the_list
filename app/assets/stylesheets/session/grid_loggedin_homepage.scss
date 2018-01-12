@@ -1,35 +1,38 @@
-// .hmp-flex {
-//   display: flex;
-// }
+
 .hmp-lin-grid {
   display: grid;
   grid-template-columns: [hlgc1] 1fr [hlgc2] 2fr [hlgc3] 2fr;
   grid-template-rows: [hlgr1] 71px [hlgr2] 1fr;
   grid-template-areas:
-    "logo taskIndex logout"
-    "listIndex taskIndex itemView";
+    "listIndexLogo taskIndex logout"
+    "listIndexLogo taskIndex itemView";
   justify-items: stretch;
 }
 
 .logo-hmp {
-  grid-column: hlgc1 / hlgc1;
-  grid-row: hlgr1 / hlgr1;
+  grid-column: rightC /rightC;
+  grid-row: rightR1 / rightR1;
   grid-area: logo;
   justify-self: start;
-
 }
 
-.list-index {
+.grid-hmp-lin-rigth {
   grid-column: hlgc1 / hlgc1;
-  grid-row: hlgr2 / hlgr2;
-  grid-area: listIndex;
+  grid-row: hlgr1 / hlgr1;
+  grid-area: listIndexLogo;
   display: grid;
+  grid-template-columns: [rightC] 1fr;
+  grid-template-rows: [rightR1] 71px [rightR2] 1fr;
+  grid-template-areas:
+    "logo"
+    "listIndex";
+  justify-self: center;
   justify-content: stretch;
 }
 
 .task-index {
-  grid-column: hlgc2 / hlgc2;
-  grid-row: hlgr1 / hlgr2;
+  grid-column: rightC / rightC;
+  grid-row: rightR2 / rightR2;
   grid-area: taskIndex;
   justify-self: stretch;
   display: grid;

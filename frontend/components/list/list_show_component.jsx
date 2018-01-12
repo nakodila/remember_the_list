@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import ListEditContainer from './edit_list_form_container';
+
 
 class ListShow extends React.Component {
     componentDidMount() {
@@ -18,6 +20,7 @@ class ListShow extends React.Component {
           <div className="item-view">
             <div className="item-view-inner">
               <h1>{curList.title}</h1>
+              <ListEditContainer />
               <div className="incomplete">
                   <label>tasks</label>
               </div>

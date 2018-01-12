@@ -25,12 +25,20 @@ class TaskShow extends React.Component {
     render () {
       return (
         <div className="item-view">
-          <form onSubmit={this.handleSubmit}>
-              <input type="text"
-                placeholder={this.props.task.body}
-                onChange={this.update('body')}/>
-              <input type="submit" value="Rename Task" />
-          </form>
+          <div className="new-list-form">
+            <form onSubmit={this.handleSubmit}>
+              <div className="add-list-form">
+                <input
+                  className="input-list"
+                  type="text"
+                  placeholder={this.props.task.body}
+                  onChange={this.update('body')}/>
+                <div className="add-list">
+                  <input className="add-list-p" type="submit" value="Rename Task" />
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       );
     }

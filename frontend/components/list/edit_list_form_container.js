@@ -1,22 +1,22 @@
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
-import { fetchTask, updateTask, createTask } from '../../actions/task_actions';
-import TaskShow from './task_show';
+import { fetchList, updateList } from '../../actions/list_actions';
+import ListEdit from './edit_list_form';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    task: state.tasks[ownProps.match.params.id]
+    list: state.lists[ownProps.match.params.id]
   }
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    fetchTask: (id) => dispatch(fetchTask(id)),
-    updateTask: (task) => dispatch(updateTask(task)),
+    fetchList: (id) => dispatch(fetchList(id)),
+    updateList: (list) => dispatch(updateList(list)),
   }
 };
 
 export default withRouter(connect(
   mapStateToProps,
   mapDispatchToProps
-)(TaskShow));
+)(ListEdit));

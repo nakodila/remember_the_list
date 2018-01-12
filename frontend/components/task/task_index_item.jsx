@@ -7,7 +7,7 @@ const Task = ({task, deleteTask}) => {
       <li>
         <DoneTask task={task}/>
         <Link to={`/tasks/${task.id}/edit`}>{task.body}</Link>
-        <button onClick={() => deleteTask(task.id)}>Delete</button>
+        <i className="fa fa-trash" aria-hidden="true" onClick={() => deleteList(task.id)}></i>
       </li>
   );
 };
