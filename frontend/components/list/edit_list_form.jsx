@@ -4,8 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 class ListEdit extends React.Component {
   constructor(props) {
     super(props);
-    let list = props.list
-    this.state = list
+    this.state = props.list
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.update = this.update.bind(this);
@@ -21,7 +20,7 @@ class ListEdit extends React.Component {
       e.preventDefault();
       const list = Object.assign({}, this.state, {id: this.props.list.id})
       //This line is for when you refresh the page. It looses the state and can't fetch the list because the id is gone
-      this.props.updateList(list);
+      this.props.updateList(list).then(() => this.setState({ title: "" }));
     }
 
     render () {
@@ -31,8 +30,9 @@ class ListEdit extends React.Component {
               <form onSubmit={this.handleSubmit}>
                 <div className="add-list-form edit-list-form">
                   <input
-                    className="input-list"
+                    className="input-list edit-list"
                     type="text"
+                    value={ this.state.title }
                     placeholder={this.props.list.title}
                     onChange={this.update('title')}/>
                   <div className="add-list">

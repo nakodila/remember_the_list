@@ -3,6 +3,7 @@
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 14px;
   line-height: 1.42857143;
+  margin-top: 39px;
 }
 
 .task-li {
@@ -183,6 +184,9 @@
   background: white;
 }
 
+.edit-list {
+  width: 200px;
+}
 .input-item-show {
   border: 1px solid rgba(20, 82, 117, .5);
   border-radius: 1px;
@@ -191,6 +195,7 @@
   justify-content: start;
   margin-right: 2px;
   background: white;
+  width: 60%;
 }
 
 .fa-trash {
@@ -208,18 +213,23 @@
   border-left: 2px solid #e5e5e5;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
-  height: 100vh;
+  height: 120vh;
   margin-top: 10px;
 }
 
 .hmp-lin-nav {
   background: #0056c2;
   display: grid;
-  justify-content: end;
   padding: 10px;
   color: rgba(255, 255, 255, 0.75);
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  justify-content: end;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.header-button {
+  padding-right: 50px;
 }
 .list-li {
 }
