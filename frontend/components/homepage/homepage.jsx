@@ -31,6 +31,9 @@ const sessionLinks = () => (
 
 const loggedInHomepage = (currentUser, logout) => (
 	<hgroup className="hmp-loggedIn hmp-flex">
+      <nav className="hmp-lin-nav">
+        <button className="header-button" onClick={logout}>Log Out</button>
+      </nav>
       <div className="hmp-lin-grid style_hmp_lin">
           <div className="grid-hmp-lin-rigth style-hmp-lin-rigth">
               <div className="logo-hmp">
@@ -41,7 +44,6 @@ const loggedInHomepage = (currentUser, logout) => (
           <TaskIndexContainer />
           <Route path="/lists/:id" component={ ListShowContainer } />
           <Route path="/tasks/:id/edit" component={ TaskShowContainer } />
-          <button className="header-button" onClick={logout}>Log Out</button>
       </div>
 	</hgroup>
 );

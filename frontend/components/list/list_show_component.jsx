@@ -17,15 +17,19 @@ class ListShow extends React.Component {
     render () {
       const curList = this.props.list;
       return (
-          <div className="item-view">
+          <div className="item-view list-view-outer slide-in">
             <div className="item-view-inner">
-              <h1>{curList.title}</h1>
-              <ListEditContainer />
-              <div className="incomplete">
-                  <label>tasks</label>
-              </div>
-              <div className="completed">
-                  <label>complete</label>
+              <h1 className="h1-L">{curList.title}</h1>
+              <div className="edit-list-sum">
+                <ListEditContainer />
+                <div className="list-task-sum">
+                  <div className="incomplete doneness">
+                      <label>tasks</label>
+                  </div>
+                  <div className="complete doneness">
+                      <label>complete</label>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

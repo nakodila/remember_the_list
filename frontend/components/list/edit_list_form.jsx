@@ -25,12 +25,21 @@ class ListEdit extends React.Component {
     render () {
       return (
         <div className="item-view">
-          <form onSubmit={this.handleSubmit}>
-              <input type="text"
-                placeholder={this.props.list.title}
-                onChange={this.update('title')}/>
-              <input type="submit" value="Rename List" />
-          </form>
+            <div className="new-list-form">
+              <form onSubmit={this.handleSubmit}>
+                <div className="add-list-form edit-list-form">
+                  <input
+                    className="input-list"
+                    type="text"
+                    placeholder={this.props.list.title}
+                    onChange={this.update('title')}/>
+                  <div className="add-list">
+                    <input className="add-list-p" type="submit" value="Rename List" />
+                  </div>
+                </div>
+              </form>
+            </div>
+
         </div>
       );
     }

@@ -20,17 +20,21 @@ class TaskShow extends React.Component {
     handleSubmit(e) {
       e.preventDefault();
       this.props.updateTask(this.state);
+
     }
 
+    // let list = this.task.list_id;
     render () {
+      debugger
       return (
-        <div className="item-view">
+        <div className="item-view task-view">
           <div className="new-list-form">
             <form onSubmit={this.handleSubmit}>
-              <div className="add-list-form">
+              <div className="add-item-show">
                 <input
-                  className="input-list"
+                  className="input-item-show"
                   type="text"
+                  value={this.props.task.body}
                   placeholder={this.props.task.body}
                   onChange={this.update('body')}/>
                 <div className="add-list">

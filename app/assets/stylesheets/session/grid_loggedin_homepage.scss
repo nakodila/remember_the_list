@@ -4,7 +4,7 @@
   grid-template-columns: [hlgc1] 1fr [hlgc2] 2fr [hlgc3] 2fr;
   grid-template-rows: [hlgr1] 71px [hlgr2] 1fr;
   grid-template-areas:
-    "listIndexLogo taskIndex logout"
+    "listIndexLogo taskIndex itemView"
     "listIndexLogo taskIndex itemView";
   justify-items: stretch;
 }
@@ -49,8 +49,9 @@
 
 .item-show {
   grid-column: hlgc3 / hlgc3;
-  grid-row: hlgr2 / hlgr2;
+  grid-row: hlgr1 / hlgr2;
   grid-area: itemView;
   display: grid;
   justify-content: stretch;
+  height: 100vh;
 }
