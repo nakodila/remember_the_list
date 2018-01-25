@@ -44,7 +44,6 @@ class SessionForm extends React.Component {
   }
 
   clearErrors() {
-
     this.props.clearSessionErrors();
   };
 

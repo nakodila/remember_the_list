@@ -4,20 +4,20 @@ import Homepage from './homepage';
 
 const mapStateToProps = (state) => {
     if (state.session !== null) {
-        return {
-          currentUser: state.session.currentUser
-        };
+      return {
+        currentUser: state.session.currentUser
+      };
     }
-}
+};
 
 
 const mapDispatchToProps = dispatch => {
     return {
-        logout: () => dispatch(logout())
+      logout: () => dispatch(logout())
     }
 };
 
 export default connect(
-    mapStateToProps,
-    mapDispatchToProps
+  mapStateToProps,
+  mapDispatchToProps
 )(Homepage);
