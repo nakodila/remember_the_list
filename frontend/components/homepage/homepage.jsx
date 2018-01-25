@@ -4,7 +4,7 @@ import ListIndexContainer from '../list/list_index_container';
 import ListShowContainer from '../list/list_show_container';
 import TaskIndexContainer from '../task/task_index_container';
 import TaskShowContainer from '../task/task_show_container';
-import WordBubble from './bob_words';
+import WordBubble from './word_cloud';
 
 const sessionLinks = () => (
     <main className="homepage-main">
@@ -23,10 +23,18 @@ const sessionLinks = () => (
         <Link to="/signup" className="red-signup-btn">Sign Up Free</Link>
       </div>
       <div className="signup-art">
-        <WordBubble words="Write the list in the morning" />
-        <WordBubble words="Be the best you can be at 5pm" />
-        <img src="https://i.imgur.com/DBe6uid.png" alt="Dont forget to call Bob"/>
-      </div>
+        <div className="word-clouds">
+          <WordBubble words="Write the list in the morning" classn="word-cloud1 word-cloud"/>
+          <WordBubble words="Remember to check the list" classn="word-cloud2 word-cloud"/>
+        </div>
+        <div className="bob-div">
+          <img src={window.staticImages.bob} alt="Dont forget to call Bob" className="bob"/>
+        </div>
+        <div className="motivation">
+          <h2 className="h2-motivation">Remember the List</h2>
+          <p>We will improve your life in so many ways</p>
+        </div>
+    </div>
       <footer className="footer"></footer>
     </main>
 );

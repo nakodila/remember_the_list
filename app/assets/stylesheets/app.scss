@@ -24,3 +24,23 @@ body {
   height: 100px;
   float: left;
 }
+
+.word-cloud {
+  width: 250px;
+  border: 1px solid white;
+  border-radius: 6px;
+  color: #145275;
+  background: white;
+  padding-right: 5px;
+  font-size: 17px;
+}
+
+.logo-no-words {
+  // padding: px;
+  width: 40px;
+}
+
+.bob {
+  width: 100%;
+  min-width: 400px;
+}

@@ -1,7 +1,7 @@
 .homepage-main {
   display: grid;
-  grid-template-columns: [one] 163px [two] auto;
-  grid-template-rows: [one] 100px [two] 213px [three] 1fr [four] 100px;
+  grid-template-columns: [one] 163px [two] auto [three];
+  grid-template-rows: [one] 100px [two] 213px [three] 1fr [four] 100px [five];
   grid-template-areas:
   "header header"
   "link link"
@@ -78,10 +78,67 @@
 }
 
 .signup-art {
+  display: grid;
+  grid-template-columns: [signup-art1c] 1fr [signup-art2c] 1fr;
+  grid-template-rows: [signup-art1r] 80px [signup-art2r] 4fr [signup-art3r] 1fr;
+  grid-template-areas:
+    "word-clouds word-clouds"
+    "bob-div bob-div"
+    "motivation motivation";
   grid-area: section;
   margin-top: 20px;
   height: 560px;
   padding-bottom: 200px;
+}
+
+.word-clouds {
+  grid-area: word-clouds;
+  display: grid;
+  grid-template-columns: [word-cloud1c] 50% [word-cloud2c] 50%;
+  grid-template-rows: [word-cloud1r] 1fr;
+  grid-template-areas:
+    "word-cloud1 word-cloud2";
+  margin: 0 10%;
+}
+
+.word-cloud {
+  display: grid;
+  grid-template-columns: [word-cloud1c] 40px [word-cloud2c] 1fr;
+  grid-template-rows: [word-cloud1r] 1fr;
+  grid-template-areas:
+  "logo-no-words message"
+}
+
+.logo-no-words {
+  grid-area: logo-no-words;
+  justify-self: start;
+  align-self: center;
+}
+
+.message {
+  grid-area: message;
+  justify-self: center;
+  align-self: center;
+}
+.word-cloud1 {
+  grid-area: word-cloud1;
+  justify-self: end;
+  align-self: center;
+  margin-right: 10px;
+}
+
+.word-cloud2 {
+  grid-area: word-cloud2;
+  justify-self: center;
+  align-self: end;
+}
+
+.bob-div {
+  display: grid;
+  justify-content: center;
+  margin: 0 15%;
+  grid-area: bob-div;
+  padding: 5%;
 }
 
 .logo-div {
@@ -105,6 +162,78 @@
   align-self: center;
 }
 
+.motivation {
+  display: grid;
+  grid-area: motivation;
+  justify-self: center;
+  align-self: center;
+  justify-content: center;
+}
+
+.h2-motivation {
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 5px;
+  justify-self: center;
+}
+
+@media screen and (max-width: 1040px) {
+  .signup-art {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: [signup-art1r] 80px [signup-art2r] 2fr [signup-art3r] 1fr;
+    grid-template-areas:
+      "word-clouds"
+      "bob-div"
+      "motivation";
+    grid-area: section;
+    margin-top: 20px;
+    height: 560px;
+    padding-bottom: 200px;
+  }
+
+  .word-clouds {
+    grid-area: word-clouds;
+    display: grid;
+    grid-template-columns: [word-cloud1c] 100%;
+    grid-template-rows: [word-cloud1r] 1fr;
+    grid-template-areas:
+      "word-cloud1"
+      "word-cloud2";
+    margin: 0 5%;
+  }
+
+  .word-cloud1 {
+    grid-area: word-cloud1;
+    justify-self: center;
+    align-self: center;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .word-cloud2 {
+    grid-area: word-cloud2;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .bob-div {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    margin: 0 5%;
+    grid-area: bob-div;
+  }
+
+  .bob {
+    width: 100%;
+    min-width: 300px;
+  }
+  .homepage-txt {
+    font-size: 25px;
+    text-align: center;
+  }
+}
 // .footer {
 //   grid-area: footer;
 //   grid-column-start: one;
