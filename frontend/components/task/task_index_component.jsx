@@ -58,5 +58,3 @@ class TaskIndex extends React.Component {
 };
 
 export default withRouter(TaskIndex);
-
-// <TaskFormContainer />

@@ -5,6 +5,8 @@ import ListShowContainer from '../list/list_show_container';
 import TaskIndexContainer from '../task/task_index_container';
 import TaskShowContainer from '../task/task_show_container';
 import WordBubble from './word_cloud';
+import SearchContainer from './task_search_container';
+
 
 const sessionLinks = () => (
     <main className="homepage-main">
@@ -39,9 +41,10 @@ const sessionLinks = () => (
     </main>
 );
 
-const loggedInHomepage = (currentUser, logout) => (
+const loggedInHomepage = (currentUser, logout) => {return (
 	<hgroup className="hmp-loggedIn hmp-flex">
     <nav className="hmp-lin-nav">
+      <SearchContainer/>
       <button className="header-button" onClick={logout}>Log Out</button>
     </nav>
     <div className="hmp-lin-grid style_hmp_lin">
@@ -56,7 +59,7 @@ const loggedInHomepage = (currentUser, logout) => (
       <Route path="/tasks/:id/edit" component={ TaskShowContainer } />
     </div>
 	</hgroup>
-);
+)};
 
 const Homepage = ({ currentUser, logout }) => (
   currentUser ? loggedInHomepage(currentUser, logout) : sessionLinks()
