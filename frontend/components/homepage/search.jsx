@@ -52,6 +52,7 @@ export default class Search extends React.Component {
             onChange={this.handleInput}
             value={this.state.inputVal}
             placeholder="&#xf002;"/>
+          <button onClick={this.selectTask}>
           <ul>
             <ReactCSSTransitionGroup
               transitionName='search'
